@@ -105,7 +105,6 @@ module.exports = {
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new CaseSensitivePathsPlugin(),
-    // new CaseSensitivePathsPlugin({debug: true}) for more info
 
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,

@@ -113,6 +113,8 @@ module.exports = {
     new webpack.optimize.ModuleConcatenationPlugin(),
 
     // new CaseSensitivePathsPlugin({debug: true}) for more info
+    // Handles errors on linux enviorments due to its case sensitive
+    // file system :/
     new CaseSensitivePathsPlugin(),
 
     // enable HMR globally - enables hot command
