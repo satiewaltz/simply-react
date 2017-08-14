@@ -34,8 +34,6 @@ cd simply-react/
 yarn install
 ```
 
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
-
 ### Building
 
 Just run:
