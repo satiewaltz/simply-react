@@ -1,0 +1,19 @@
+{
+ "presets": [
+   [
+     "latest", {
+       "es2015": {
+         "modules": false
+       }
+     }
+   ],
+   "react"
+ ],
+ "plugins": [
+   "react-hot-loader/babel",
+   "syntax-dynamic-import",
+   "transform-object-rest-spread",
+   "transform-es2015-destructuring",
+   "transform-class-properties"
+ ]
+}

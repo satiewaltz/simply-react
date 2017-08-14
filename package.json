@@ -1,0 +1,63 @@
+{
+  "name": "simply-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Dave Barthly <davebarthly@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "webpack-dashboard -- webpack-dev-server",
+    "build": "webpack --config ./webpack.config.config.js --progress --display-error-details"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "async-reactor": "^1.2.0",
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-latest": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "css-loader": "^0.28.2",
+    "directory-named-webpack-plugin": "^2.1.0",
+    "eslint": "^4.4.1",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.0.1",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
+    "imports-loader": "^0.7.1",
+    "lint-staged": "^4.0.3",
+    "node-sass": "^4.5.3",
+    "path": "^0.12.7",
+    "postcss-loader": "^2.0.5",
+    "prettier": "^1.5.3",
+    "react-hot-loader": "next",
+    "sass-loader": "^6.0.5",
+    "script-ext-html-webpack-plugin": "^1.8.1",
+    "style-loader": "^0.18.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.2",
+    "webpack-dashboard": "^0.4.0",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-manifest-plugin": "^1.3.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-transition-group": "^2.2.0"
+  }
+}
