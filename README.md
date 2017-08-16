@@ -1,5 +1,5 @@
 # Simply React
-> A simple React boilerplate with React Hot Loader.
+> My personal React boilerplate with React Hot Loader.
 
 ## Installing / Getting started
 
@@ -23,6 +23,8 @@ Open `localhost:8080` to the app.
 - Eslint
 - Babel
 - Webpack
+- SCSS
+- CSS Modules
 
 ### Setting up Dev
 
