@@ -1,44 +1,30 @@
 {
-    "env": {
-        "browser": true,
-        "node": true,
-        "commonjs": true,
-        "es6": true
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalDecorators": true,
+      "experimentalObjectRestSpread": true,
+      "jsx": true
     },
-    "extends": [
-        "prettier",
-        "eslint:recommended", 
-        "plugin:react/recommended"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "experimentalDecorators": true,
-            "experimentalObjectRestSpread": true,
-            "jsx": true
-        },
-        "sourceType": "module"
-    },
-    "parser": "babel-eslint",
-    "plugins": [
-        "react",
-        "prettier"
-    ],
-    "rules": {
-        "react/prop-types": 0,        
-        "react/display-name": 0,
-        "react/no-string-refs": 0,
-        "prettier/prettier": "error",
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/no-string-refs": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "jsx-space-before-closing": false
+      }
+    ]
+  }
 }

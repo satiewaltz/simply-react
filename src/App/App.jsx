@@ -2,4 +2,6 @@ import React from "react";
 
 import Hello from "./Hello";
 
-export default () => <Hello />;
+const App = () => <Hello />;
+
+export default App;

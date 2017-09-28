@@ -40,7 +40,8 @@ module.exports = {
   // Output
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "./bundle.js"
+    filename: "./bundle.js",
+    pathinfo: true
   },
 
   //////////////////////////////////////////////////////
@@ -48,12 +49,7 @@ module.exports = {
   resolve: {
     mainFields: ["browser", "module", "main"],
     extensions: [".js", ".jsx"], // resolves imports
-    modules: [
-      path.resolve("./src"),
-      path.resolve("./src/framework"),
-      path.resolve("./lib"),
-      path.resolve("./node_modules")
-    ],
+    modules: [path.resolve("./src"), path.resolve("./node_modules")],
     // alias: {
     //   styles: path.resolve(__dirname, 'src/components/Styles')
     // },
@@ -73,7 +69,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         use: ["babel-loader"],
-        exclude: /node_modules/
+        include: path.join(__dirname, "src")
       },
       {
         test: /\.scss$/,
@@ -156,5 +152,5 @@ module.exports = {
     // publicPath: '/' // should always match output dir
   },
   ////////////////////////////////////////////
-  devtool: "source-map"
+  devtool: "cheap-module-eval-source-map"
 };

@@ -51,7 +51,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         use: ["babel-loader"],
-        exclude: /node_modules/
+        include: path.join(__dirname, "src")
       },
       {
         test: /\.scss$/,
@@ -119,5 +119,5 @@ module.exports = {
     new webpack.optimize.AggressiveMergingPlugin()
   ],
 
-  devtool: "cheap-module-source-map"
+  devtool: "hidden-source-map"
 };
