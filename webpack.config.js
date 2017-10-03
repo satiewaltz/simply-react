@@ -93,7 +93,7 @@ module.exports = {
           },
           { loader: "sass-loader", options: { sourceMap: true } }
         ],
-        exclude: /node_modules/
+        include: path.join(__dirname, "src")
       },
       {
         test: /\.(jpg|png|gif|svg|mp3)$/,
@@ -106,8 +106,6 @@ module.exports = {
   ////////////////////////////////////////////
   // Plugins
   plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-
     // new CaseSensitivePathsPlugin({debug: true}) for more info
     // Handles errors on linux enviorments due to its case sensitive
     // file system :/
@@ -128,9 +126,6 @@ module.exports = {
       filename: "index.html", // file name
       template: "./template.html" // template to generate html
     })
-    // new ScriptExtHtmlWebpackPlugin({
-    //   defaultAttribute: 'async'
-    // })
   ],
 
   ////////////////////////////////////////////
@@ -148,7 +143,7 @@ module.exports = {
     ///// to generate HTML on the fly.
     contentBase: path.resolve(__dirname, "dist")
 
-    // should always point to a index.htm;
+    // should always point to a index.html
     // publicPath: '/' // should always match output dir
   },
   ////////////////////////////////////////////
