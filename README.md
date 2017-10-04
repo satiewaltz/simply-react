@@ -19,6 +19,7 @@ Open `localhost:8080` to the app.
 ### Built With
 - React
 - React Hot Loader
+- Jest
 - Prettier
 - Eslint
 - Babel
