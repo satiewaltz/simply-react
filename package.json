@@ -8,34 +8,21 @@
     "test": "jest",
     "precommit": "lint-staged",
     "start": "webpack-dashboard -- webpack-dev-server",
-    "build": "webpack --config ./webpack.config.config.js --progress --display-error-details",
-    "setup:new": "rm -rf .git README.md && yarn install && git init && touch README.md && echo \"# New Project\n\nBe sure to update this file and package.json with your new project's name.\" > README.md"
+    "build":
+      "webpack --config ./webpack.config.config.js --progress --display-error-details",
+    "setup:new":
+      "rm -rf .git README.md && yarn install && git init && touch README.md && echo \"# New Project\n\nBe sure to update this file and package.json with your new project's name.\" > README.md"
   },
   "jest": {
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-dom"
-    ],
-    "testFileExtensions": [
-      "jsx",
-      "js"
-    ],
-    "moduleFileExtensions": [
-      "jsx",
-      "js",
-      "json",
-      "es6"
-    ],
-    "testPathDirs": [
-      "<rootDir>/src/"
-    ]
+    "moduleNameMapper": {
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      ["<rootDir>/src/**/*.*"],
+      "^.+\\.(css|scss)$": ["<rootDir>/src/**/*.scss"]
+    }
   },
+
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,jsx}": ["eslint --fix", "prettier --write", "git add"]
   },
   "devDependencies": {
     "async-reactor": "^1.2.0",

@@ -48,3 +48,21 @@ yarn build
 ## Licensing
 
 MIT
+
+    // "unmockedModulePathPatterns": [
+    //   "<rootDir>/node_modules/react",
+    //   "<rootDir>/node_modules/react-dom"
+    // ],
+    // "testFileExtensions": [
+    //   "jsx",
+    //   "js"
+    // ],
+    // "moduleFileExtensions": [
+    //   "jsx",
+    //   "js",
+    //   "json",
+    //   "es6"
+    // ],
+    // "testPathDirs": [
+    //   "<rootDir>/src/"
+    // ]
