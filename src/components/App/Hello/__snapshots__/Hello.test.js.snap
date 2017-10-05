@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hello world! 1`] = `
+<p
+  className="hello"
+>
+  Hello World.
+</p>
+`;

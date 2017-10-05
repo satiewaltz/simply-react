@@ -6,26 +6,34 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "precommit": "lint-staged",
     "start": "webpack-dashboard -- webpack-dev-server",
-    "build":
-      "webpack --config ./webpack.config.config.js --progress --display-error-details",
-    "setup:new":
-      "rm -rf .git README.md && yarn install && git init && touch README.md && echo \"# New Project\n\nBe sure to update this file and package.json with your new project's name.\" > README.md"
+    "build": "webpack --config ./webpack.config.config.js --progress --display-error-details",
+    "setup:new": "rm -rf .git README.md && yarn install && git init && touch README.md && echo \"# New Project\n\nBe sure to update this file and package.json with your new project's name.\" > README.md"
   },
   "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "moduleNameMapper": {
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-      ["<rootDir>/src/**/*.*"],
-      "^.+\\.(css|scss)$": ["<rootDir>/src/**/*.scss"]
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss|sass|less)$": "identity-obj-proxy"
     }
   },
-
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --fix", "prettier --write", "git add"]
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
-    "async-reactor": "^1.2.0",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^8.0.1",
@@ -35,7 +43,7 @@
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-latest": "^6.24.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.23.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "css-loader": "^0.28.2",
@@ -47,6 +55,7 @@
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
     "imports-loader": "^0.7.1",
     "jest": "^21.2.1",
     "lint-staged": "^4.0.3",
@@ -67,10 +76,10 @@
     "webpack-manifest-plugin": "^1.3.0"
   },
   "dependencies": {
-    "identity-obj-proxy": "^3.0.0",
-    "prop-types": "^15.5.10",
+    "normalize.css": "^7.0.0",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-transition-group": "^2.2.0"
+    "react-transition-group": "^2.2.1"
   }
 }

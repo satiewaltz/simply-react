@@ -48,11 +48,12 @@ module.exports = {
   // Resolves imports - helps make importing less verbose
   resolve: {
     mainFields: ["browser", "module", "main"],
-    extensions: [".js", ".jsx"], // resolves imports
-    modules: [path.resolve("./src"), path.resolve("./node_modules")],
-    // alias: {
-    //   styles: path.resolve(__dirname, 'src/components/Styles')
-    // },
+    extensions: [".js", ".jsx", ".scss", ".css"], // resolves imports
+    modules: [
+      path.resolve("./src"),
+      path.resolve("./node_modules"),
+      path.resolve("./src/components")
+    ],
     plugins: [
       // Resolves component directory names
       new DirectoryNamedWebpackPlugin({
@@ -91,7 +92,13 @@ module.exports = {
               sourceMap: true
             }
           },
-          { loader: "sass-loader", options: { sourceMap: true } }
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+              includePaths: [path.resolve("src", "/styles")]
+            }
+          }
         ],
         include: path.join(__dirname, "src")
       },
