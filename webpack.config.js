@@ -73,14 +73,14 @@ module.exports = {
         include: path.join(__dirname, "src")
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|sass|scss)$/,
         use: [
           { loader: "style-loader", options: { sourceMap: true } },
           {
             loader: "css-loader",
             options: {
               modules: true,
-              localIdentName: "[path][name]__[local]--[hash:base64:5]",
+              localIdentName: "[path]-[hash:base64:5]",
               sourceMap: true
               // show original src classname in css
             }
@@ -100,7 +100,10 @@ module.exports = {
             }
           }
         ],
-        include: path.join(__dirname, "src")
+        include: [
+          path.join(__dirname, "src"),
+          path.join(__dirname, "/node_modules/normalize.css")
+        ]
       },
       {
         test: /\.(jpg|png|gif|svg|mp3)$/,
