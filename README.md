@@ -3,48 +3,39 @@
 
 ## Installing / Getting started
 
-Just clone, install, and start!
+Setup is as simple as cloning, installing, and `yarn start`!
 
 ```shell
-git clone https://github.com/satiewaltz/simply-react
-cd simply-react/
-yarn install
+git clone https://github.com/satiewaltz/simply-react project_name
+cd project_name/
+yarn setup:new
 yarn start
 ```
 
-Open `localhost:8080` to the app.
-
-## Developing
+Open `localhost:8080` to see the app. Live editting included.
 
 ### Built With
-- React
-- React Hot Loader
-- Jest
+- React 16
+- React Hot Loader 3
+- Webpack 3
+- Jest 20+
 - Prettier
 - Eslint
 - Babel
-- Webpack
 - SCSS
 - CSS Modules
 
-### Setting up Dev
-
-Just clone
-
-```shell
-git clone https://github.com/satiewaltz/simply-react
-cd simply-react/
-yarn setup:new
-```
-
-### Building
-
-Just run:
-
+### Scripts
+Buidling to a `/dist` folder for distribution:
 ```shell
 yarn build
 ```
 
-## Licensing
+Run test suite:
+```shell
+yarn test
+```
+---
+### Licensing
 
 [MIT](https://opensource.org/licenses/mit-license.php)
