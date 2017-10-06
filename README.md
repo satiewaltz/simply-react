@@ -47,4 +47,4 @@ yarn build
 
 ## Licensing
 
-MIT
+[MIT](https://opensource.org/licenses/mit-license.php)
