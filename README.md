@@ -34,7 +34,7 @@ Just clone
 ```shell
 git clone https://github.com/satiewaltz/simply-react
 cd simply-react/
-yarn install
+yarn setup:new
 ```
 
 ### Building
