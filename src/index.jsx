@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import App from "./components/App";
 
-// import "normalize.css/normalize.css";
+import "normalize.css/normalize.css";
 
 const rootEl = document.getElementById("root");
 

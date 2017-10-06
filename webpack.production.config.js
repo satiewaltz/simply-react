@@ -64,7 +64,8 @@ module.exports = {
                   modules: true,
                   localIdentName: "[path]-[hash:base64:5]",
                   sourceMap: true,
-                  importLoaders: 2
+                  importLoaders: 2,
+                  minimize: true
                   // show original src classname in css
                 }
               },
