@@ -115,7 +115,6 @@ module.exports = {
       name: "commons",
       filename: "./js/commons.js"
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin()
   ],
 
