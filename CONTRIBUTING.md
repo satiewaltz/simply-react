@@ -8,6 +8,6 @@ Here's a simple step-by-step process to get started:
 2. If it looks interesting to you to work on - add a comment to let everyone know you've claimed it!
 3. Fork the repository, make a new branch, and start working on the issue.
 4. Open a pull request and don't forget to add the branch you've added your code on.
-5. It'll be reviewed to make sure it's good to merge - if it is - then you're done!
+5. It'll be reviewed to make sure it's good to merge. If it is, then you're done! 🎉
 ---
 *Remember to be excellent to everyone!*
