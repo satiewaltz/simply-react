@@ -3,6 +3,7 @@ const webpack = require("webpack");
 
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   node: {
@@ -53,31 +54,37 @@ module.exports = {
       {
         test: /\.(css|sass|scss)$/,
         use: [
-          { loader: "style-loader", options: { sourceMap: true } },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              localIdentName: "[path]-[hash:base64:5]",
-              sourceMap: true,
-              minimize: true
-              // show original src classname in css
-            }
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              plugins: [require("autoprefixer")],
-              sourceMap: true
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-              includePaths: [path.resolve("src", "/styles")]
-            }
-          }
+          ////////////////////////////////////////
+          ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+              {
+                loader: "css-loader",
+                options: {
+                  modules: true,
+                  localIdentName: "[path]-[hash:base64:5]",
+                  sourceMap: true,
+                  importLoaders: 2
+                  // show original src classname in css
+                }
+              },
+              {
+                loader: "postcss-loader",
+                options: {
+                  plugins: [require("autoprefixer")],
+                  sourceMap: true
+                }
+              },
+              {
+                loader: "sass-loader",
+                options: {
+                  sourceMap: true,
+                  includePaths: [path.resolve("src", "/styles")]
+                }
+              }
+            ]
+          })
+          ////////////////////////////////////////
         ],
         include: [
           path.join(__dirname, "src"),
@@ -100,6 +107,11 @@ module.exports = {
   ////////////////////////////////////////////
   // Plugins
   plugins: [
+    new ExtractTextPlugin({
+      filename: "css/style.css",
+      disable: false,
+      allChunks: true
+    }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("production")
     }),

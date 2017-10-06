@@ -9,6 +9,7 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 // Allows one to use directory names for components
 const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // Below is to add addtional attributes to the script tag for react
 // const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
@@ -74,32 +75,39 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/,
-        use: [
-          { loader: "style-loader", options: { sourceMap: true } },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              localIdentName: "[path]-[hash:base64:5]",
-              sourceMap: true
-              // show original src classname in css
-            }
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              plugins: [require("autoprefixer")],
-              sourceMap: true
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-              includePaths: [path.resolve("src", "/styles")]
-            }
-          }
-        ],
+        ////////////////////////////////////////
+        use: ["css-hot-loader"].concat(
+          ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+              {
+                loader: "css-loader",
+                options: {
+                  modules: true,
+                  localIdentName: "[path]-[hash:base64:5]",
+                  sourceMap: true,
+                  importLoaders: 2
+                  // show original src classname in css
+                }
+              },
+              {
+                loader: "postcss-loader",
+                options: {
+                  plugins: [require("autoprefixer")],
+                  sourceMap: true
+                }
+              },
+              {
+                loader: "sass-loader",
+                options: {
+                  sourceMap: true,
+                  includePaths: [path.resolve("src", "/styles")]
+                }
+              }
+            ]
+          })
+        ),
+        ////////////////////////////////////////
         include: [
           path.join(__dirname, "src"),
           path.join(__dirname, "/node_modules/normalize.css")
@@ -135,7 +143,12 @@ module.exports = {
       inject: "body", // inject tags into
       filename: "index.html", // file name
       template: "./template.html" // template to generate html
-    })
+    }),
+    new ExtractTextPlugin({
+      filename: "css/style.css",
+      disable: false,
+      allChunks: true
+    }) // this means dist/css/style.css
   ],
 
   ////////////////////////////////////////////
