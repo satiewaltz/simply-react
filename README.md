@@ -46,3 +46,5 @@ yarn test
 ### Licensing
 
 [MIT](https://opensource.org/licenses/mit-license.php)
+
+*Created by Dave Barthly*
