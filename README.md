@@ -1,4 +1,7 @@
-# Simply React
+<p align="center">
+  <img src="https://github.com/satiewaltz/simply-react/blob/logo/logo/logo.png" alt="Simple React's logo"/>
+</p>
+
 > A deadsimple-to-use React boilerplate with React-Hot-Loader. 🚀
 
 ## Installing / Getting started
