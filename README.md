@@ -16,6 +16,7 @@ yarn start
 ```
 
 Open `localhost:8080` to see the app. Live editing included.
+
 No nonsense - just get straight to work already!
 
 ### Built With
