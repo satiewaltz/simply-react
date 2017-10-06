@@ -3,6 +3,7 @@
 </p>
 
 > *A deadsimple-to-use React boilerplate with React-Hot-Loader. 🚀*
+
 > *Everything you need and nothing you don't.*
 
 ## Installing / Getting started
