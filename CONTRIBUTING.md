@@ -11,3 +11,5 @@ Here's a simple step-by-step process to get started:
 5. It'll be reviewed to make sure it's good to merge. If it is, then you're done! 🎉
 ---
 *Remember to be excellent to everyone!*
+
+![Be excellent to eachother!](https://media.giphy.com/media/l4KhRsScQKgWZzqO4/giphy.gif)
