@@ -1,5 +1,5 @@
 # Simply React
-> My personal React boilerplate with React Hot Loader.
+> A deadsimple-to-use React boilerplate with React-Hot-Loader. 🚀 Edit
 
 ## Installing / Getting started
 
