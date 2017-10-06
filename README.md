@@ -2,7 +2,7 @@
   <img src="https://github.com/satiewaltz/simply-react/blob/logo/logo/logo.png" alt="Simple React's logo"/>
 </p>
 
-> *A deadsimple-to-use React boilerplate. With everything you need and nothing you don't. 🚀*
+> *A deadsimple-to-use React boilerplate. With everything you need and nothing you don't! 🚀*
 
 ## Installing / Getting started
 
