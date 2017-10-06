@@ -15,7 +15,8 @@ yarn setup:new
 yarn start
 ```
 
-Open `localhost:8080` to see the app. Live editting included.
+Open `localhost:8080` to see the app. Live editing included.
+No nonsense - just get straight to work already!
 
 ### Built With
 - React 16
