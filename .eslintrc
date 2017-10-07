@@ -6,7 +6,12 @@
     "es6": true,
     "jest": true
   },
-  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalDecorators": true,
@@ -21,6 +26,7 @@
     "react/prop-types": 0,
     "react/display-name": 0,
     "react/no-string-refs": 0,
+    "no-implicit-globals": "error",
     "prettier/prettier": "warn"
   }
 }
