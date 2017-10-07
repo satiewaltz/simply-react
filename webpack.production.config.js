@@ -53,40 +53,38 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/,
-        use: [
-          ////////////////////////////////////////
-          ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: [
-              {
-                loader: "css-loader",
-                options: {
-                  modules: true,
-                  localIdentName: "[path]-[hash:base64:5]",
-                  sourceMap: true,
-                  importLoaders: 2,
-                  minimize: true
-                  // show original src classname in css
-                }
-              },
-              {
-                loader: "postcss-loader",
-                options: {
-                  plugins: [require("autoprefixer")],
-                  sourceMap: true
-                }
-              },
-              {
-                loader: "sass-loader",
-                options: {
-                  sourceMap: true,
-                  includePaths: [path.resolve("src", "/styles")]
-                }
+        ////////////////////////////////////////
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                modules: true,
+                localIdentName: "[path]-[hash:base64:5]",
+                sourceMap: true,
+                importLoaders: 2,
+                minimize: true
+                // show original src classname in css
               }
-            ]
-          })
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: [require("autoprefixer")],
+                sourceMap: true
+              }
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true,
+                includePaths: [path.resolve("src", "/styles")]
+              }
+            }
+          ]
           ////////////////////////////////////////
-        ],
+        }),
         include: [
           path.join(__dirname, "src"),
           path.join(__dirname, "/node_modules/normalize.css")
