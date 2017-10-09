@@ -33,12 +33,12 @@ Open `localhost:8080` to see the app. Live editing included.
 - CSS Modules
 
 ### Scripts
-Buidling to a `/dist` folder for distribution:
+Build to a `/dist` folder for distribution:
 ```shell
 yarn build
 ```
 
-Run test suite:
+Run your test suite:
 ```shell
 yarn test
 ```
