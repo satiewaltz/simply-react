@@ -24,7 +24,7 @@ Open `localhost:8080` to see the app. Live editing included.
 ### Built With
 - React 16
 - React Hot Loader 3
-- Webpack 3
+- Webpack 3.6
 - Jest 20+
 - Prettier
 - Eslint
