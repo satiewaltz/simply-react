@@ -42,6 +42,12 @@ Run your test suite:
 ```shell
 yarn test
 ```
+
+Analyze bundle size:
+```shell
+yarn analyze
+```
+
 ---
 ### Licensing
 

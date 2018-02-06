@@ -1,6 +1,6 @@
 {
   "name": "simply-react",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "main": "index.js",
   "author": "Dave Barthly <davebarthly@gmail.com>",
   "license": "MIT",
@@ -11,17 +11,12 @@
     "precommit": "lint-staged",
     "start": "webpack-dashboard -- webpack-dev-server",
     "analyze": "yarn build && webpack-bundle-analyzer dist/stats.json",
-    "build": "rm -rf /dist && webpack --config ./webpack.production.config.js --progress --display-error-details --profile --json > dist/stats.json",
+    "build": "rm -rf /dist && mkdir dist && webpack --config ./webpack.production.config.js --progress --display-error-details --json > dist/stats.json",
     "setup:new": "rm -rf .git README.md && yarn install && git init && touch README.md && echo \"# New Project\n\nBe sure to update this file and package.json with your new project's name.\" > README.md"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
+    "moduleFileExtensions": [ "js", "jsx" ],
+    "moduleDirectories": [ "node_modules" ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss|sass)$": "identity-obj-proxy"
@@ -76,8 +71,7 @@
     "webpack": "^3.5.2",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dashboard": "^0.4.0",
-    "webpack-dev-server": "^2.7.1",
-    "webpack-manifest-plugin": "^1.3.0"
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
