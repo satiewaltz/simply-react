@@ -23,7 +23,7 @@ _No nonsense - just get straight to work!_
 
 ### Built With
 
-* React 16+
+* React 16.3+
 * React Hot Loader 4
 * Webpack 4.x
 * Prettier

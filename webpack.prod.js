@@ -5,13 +5,6 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-
-let cleanOptions = {
-  verbose: true,
-  dry: false
-};
-
 const outputFolder = "dist";
 
 module.exports = {
@@ -122,7 +115,6 @@ module.exports = {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new CaseSensitivePathsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new HtmlWebpackPlugin({ template: "./template.html" }),
-    new CleanWebpackPlugin([outputFolder], cleanOptions)
+    new HtmlWebpackPlugin({ template: "./template.html" })
   ]
 };
