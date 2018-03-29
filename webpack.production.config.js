@@ -6,16 +6,10 @@ const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  node: {
-    fs: "empty",
-    net: "empty"
-  },
-
-  target: "web",
-
+  mode: "production",
   context: path.resolve(__dirname, "src"),
-
-  entry: { "js/index": "./index.jsx" },
+  entry: "./main.jsx",
+  target: "web",
 
   output: {
     path: path.resolve(__dirname, "dist"),
