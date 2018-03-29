@@ -2,7 +2,7 @@
   <img src="https://github.com/satiewaltz/simply-react/blob/logo/logo/logo.png" alt="Simple React's logo"/>
 </p>
 
-> *A deadsimple-to-use React boilerplate. With everything you need and nothing you don't! 🚀*
+> _A deadsimple-to-use React boilerplate. With everything you need and nothing you don't! 🚀_
 
 ## Installing / Getting started
 
@@ -17,40 +17,45 @@ yarn start
 
 Open `localhost:8080` to see the app. Live editing included.
 
-*No nonsense - just get straight to work!*
+_No nonsense - just get straight to work!_
 
 ---
 
 ### Built With
-- React 16
-- React Hot Loader 3
-- Webpack 3.6
-- Jest 20+
-- Prettier
-- Eslint
-- Babel
-- SCSS
-- CSS Modules
+
+* React 16+
+* React Hot Loader 4
+* Webpack 4.x
+* Prettier
+* Eslint
+* Babel
+* SCSS
+* CSS Modules
 
 ### Scripts
+
 Build to a `/dist` folder for distribution:
+
 ```shell
 yarn build
 ```
 
 Run your test suite:
+
 ```shell
 yarn test
 ```
 
 Analyze bundle size:
+
 ```shell
 yarn analyze
 ```
 
 ---
+
 ### Licensing
 
 [MIT](https://opensource.org/licenses/mit-license.php)
 
-*Created by Dave Barthly*
+_Created by Dave Barthly_
