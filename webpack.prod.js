@@ -4,17 +4,28 @@ const webpack = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+
+let cleanOptions = {
+  verbose: true,
+  dry: false
+};
+
+const outputFolder = "dist";
 
 module.exports = {
+  devtool: "hidden-source-map",
   mode: "production",
   context: path.resolve(__dirname, "src"),
   entry: "./main.jsx",
   target: "web",
 
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "./[name].js",
-    publicPath: "./dist/"
+    path: path.resolve(__dirname, outputFolder),
+    filename: "./[name].js"
+    // Config publicPath to serve html file separately
+    // publicPath: `./${outputFolder}/`
   },
 
   //////////////////////////////////////////////////////
@@ -110,18 +121,8 @@ module.exports = {
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new CaseSensitivePathsPlugin(),
-
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      sourceMap: true,
-      comments: false
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "commons",
-      filename: "./js/commons.js"
-    }),
-    new webpack.optimize.AggressiveMergingPlugin()
-  ],
-
-  devtool: "hidden-source-map"
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new HtmlWebpackPlugin({ template: "./template.html" }),
+    new CleanWebpackPlugin([outputFolder], cleanOptions)
+  ]
 };

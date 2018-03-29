@@ -13,6 +13,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 module.exports = {
+  devtool: "cheap-module-eval-source-map",
   mode: "development",
   context: path.resolve(__dirname, "src"),
   entry: "./main.jsx",
@@ -155,7 +156,6 @@ module.exports = {
     }
     // should always point to a index.html
     // publicPath: '/' // should always match output dir
-  },
+  }
   ////////////////////////////////////////////
-  devtool: "cheap-module-eval-source-map"
 };
