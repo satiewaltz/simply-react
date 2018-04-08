@@ -11,7 +11,7 @@ module.exports = {
   devtool: "hidden-source-map",
   mode: "production",
   context: path.resolve(__dirname, "src"),
-  entry: "./main.jsx",
+  entry: ["@babel/polyfill", "./main.jsx"],
   target: "web",
 
   output: {

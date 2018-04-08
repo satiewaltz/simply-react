@@ -16,7 +16,7 @@ module.exports = {
   devtool: "cheap-module-eval-source-map",
   mode: "development",
   context: path.resolve(__dirname, "src"),
-  entry: "./main.jsx",
+  entry: ["@babel/polyfill", "./main.jsx"],
 
   ////////////////////////////////////////////
   // Output

@@ -20,14 +20,12 @@
     "sourceType": "module"
   },
   "parser": "babel-eslint",
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
   "rules": {
     "react/prop-types": 0,
     "react/display-name": 0,
     "react/no-string-refs": 0,
+    "no-console": "off",
     "no-implicit-globals": "error",
     "prettier/prettier": "warn"
   }
